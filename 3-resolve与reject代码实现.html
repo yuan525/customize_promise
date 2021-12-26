@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial=1.0'>
+	<title>Promise封装 | 3-resolve与reject代码实现</title>
+	<script src="./promise03.js"></script>
+</head>
+<body>
+	<script>
+		let p = new Promise((resolve,reject)=>{
+			// resolve("OK")
+			reject("err")
+		})
+		console.log(p)
+		// p.then(value=>{
+		// 	console.log(value)
+		// },reason=>{
+		// 	console.log(reason)
+		// })
+	</script>
+</body>
+</html>

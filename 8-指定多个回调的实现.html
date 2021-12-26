@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial=1.0'>
+	<title>Promise封装 | 8-指定多个回调的实现</title>
+	<script src="./promise08.js"></script>
+</head>
+<body>
+	<script>
+		let p = new Promise((resolve,reject)=>{
+			setTimeout(()=>{
+				// resolve("success");
+				 reject('error')
+			},2000)
+		})
+
+		p.then(value=>{
+			console.log(value)
+		},reason=>{
+			console.warn(reason)
+		})
+
+		p.then(value=>{
+			alert(value)
+		},reason=>{
+			alert(reason)
+		})
+
+		console.log(p)
+	</script>
+</body>
+</html>

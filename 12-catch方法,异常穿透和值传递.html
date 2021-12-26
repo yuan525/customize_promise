@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial=1.0'>
+	<title>Promise封装 | 12-catch方法,异常穿透和值传递</title>
+	<script src="./promise12.js"></script>
+</head>
+<body>
+	<script>
+		let p = new Promise((resolve,reject)=>{	
+			 setTimeout(()=>{
+				 resolve("success");
+				// reject('error')
+			 },2000)		
+			
+		})
+		// catch方法
+		// const res = p.catch(reson=>{
+		// 	console.warn(reson)
+		// })
+		// console.log(res)
+
+		// 异常穿透
+		// p.then(value=>{
+		// 	console.log(111)
+		// }).then(value=>{
+		// 	console.log(222)
+		// }).then(value=>{
+		// 	console.log(333)
+		// }).catch(reson=>{
+		// 	console.warn(reson)
+		// })
+
+		// 值传递
+		p.then().then(value=>{
+			console.log(222)
+		}).then(value=>{
+			console.log(333)
+		}).catch(reson=>{
+			console.warn(reson)
+		})
+	</script>
+</body>
+</html>

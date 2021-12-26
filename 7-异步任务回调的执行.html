@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial=1.0'>
+	<title>Promise封装 | 7-异步任务回调的执行</title>
+	<script src="./promise07.js"></script>
+</head>
+<body>
+	<script>
+		let p = new Promise((resolve,reject)=>{
+			setTimeout(()=>{
+				// resolve("success");
+				reject('error')
+			},2000)
+		})
+
+		p.then(value=>{
+			console.log(value)
+		},reason=>{
+			console.warn(reason)
+		})
+
+		console.log(p)
+	</script>
+</body>
+</html>

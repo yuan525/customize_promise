@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial=1.0'>
+	<title>Promise封装 | 14-Promise.reject方法的封装</title>
+	<script src="./promise14.js"></script>
+</head>
+<body>
+	<script>
+     	const p = Promise.reject('err');
+     	const p1=Promise.reject(new Promise((resolve,reject)=>{
+     		 resolve('success')
+     		
+     	}))
+     	const p2=Promise.reject(Promise.resolve("yeah"))
+     	console.log(p);
+     	console.log(p1);
+     	console.log(p2);
+	</script>
+</body>
+</html>

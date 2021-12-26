@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial=1.0'>
+	<title>Promise封装 | 16-Promise.race方法的封装</title>
+	<script src="./promise16.js"></script>
+</head>
+<body>
+	<script>
+     	const p = new Promise((resolve,reject)=>{
+     		// reject("ok")
+     		setTimeout(()=>{
+     			reject("err")
+     		},2000)
+     		
+     	})
+     	const p1=Promise.resolve('success')
+     		
+     	const p2=Promise.resolve("yeah")
+     	
+     	// 对象的状态和结果由最先返回的值决定
+     	const res = Promise.race([p,p1,p2])
+     	console.log(res)
+     </script>
+</body>
+</html>
